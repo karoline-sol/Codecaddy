@@ -37,7 +37,7 @@ import { searchBooks as searchGoogleBooks } from '../services/googleBooksApi'
   @property {() => {completed: number, total: number}} getReadingProgress
  */
 
-// Basic Book interface - students will expand this
+
 const sampleBooks = [
   {
     id: '1',
