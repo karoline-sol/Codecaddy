@@ -1,4 +1,6 @@
-function Navigation({ currentView, onNavigate }) {
+import { Link, useLocation } from 'react-router-dom'
+function Navigation() {
+  const location = useLocation()
   // TODO: Students will convert this to use React Router Link components
   // Replace button onClick handlers with Link to="/route" components
   
@@ -9,26 +11,26 @@ function Navigation({ currentView, onNavigate }) {
       </div>
       
       <div className="nav-links">
-        <button 
-          className={currentView === 'home' ? 'nav-link active' : 'nav-link'}
+        <Link to="/"
+          className={location.pathname === 'home' ? 'nav-link active' : 'nav-link'}
           onClick={() => onNavigate('home')}
         >
           Home
-        </button>
+        </Link>
         
-        <button 
-          className={currentView === 'search' ? 'nav-link active' : 'nav-link'}
+        <Link to="/search"
+          className={location.pathname === '/search' ? 'nav-link active' : 'nav-link'}
           onClick={() => onNavigate('search')}
         >
           Search
-        </button>
+        </Link>
         
-        <button 
-          className={currentView === 'collection' ? 'nav-link active' : 'nav-link'}
+        <Link to="/collection"
+          className={location.pathname === 'collection' ? 'nav-link active' : 'nav-link'}
           onClick={() => onNavigate('collection')}
         >
           My Collection
-        </button>
+        </Link>
       </div>
     </nav>
   )

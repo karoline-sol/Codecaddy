@@ -1,6 +1,42 @@
 import { createContext, useContext, useReducer, useEffect } from 'react'
 import { searchBooks as searchGoogleBooks } from '../services/googleBooksApi'
 
+/** 
+  @typedef {Object} Book
+  @property {string} id
+  @property {string} title
+  @property {string[]} authors
+  @property {string} description
+  @property {string} publishedDate
+  @property {number} pageCount
+  @property {'want-to-read' | 'currently-reading' | 'have-read'} status
+ */
+
+/** 
+  @typedef {Object} BookCollectionState
+  @property {Book[]} books
+  @property {Book[]} searchResults
+  @property {boolean} isLoading
+  @property {string|null} error
+ */
+
+/** 
+  @typedef {Object} BookCollectionActions
+  @property {(book: Book) => void} addBook
+  @property {(bookId: string) => void} removeBook
+  @property {(bookId: string, status: string) => void} updateBookStatus
+  @property {(query: string) => Promise<void>} searchBooks
+  @property {() => void} clearSearch
+ */
+
+/** 
+  @typedef {Object} BookCollectionHelpers
+  @property {(id: string) => Book|undefined} getBookById
+  @property {(status: string) => Book[]} getBooksByStatus
+  @property {() => number} getTotalBooks
+  @property {() => {completed: number, total: number}} getReadingProgress
+ */
+
 // Basic Book interface - students will expand this
 const sampleBooks = [
   {
