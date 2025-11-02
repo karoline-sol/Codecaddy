@@ -10,8 +10,8 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: "",
-  build: {
+  base: "/Codecaddy",
+  build: {git 
     outDir: 'docs',
     emptyOutDir: true, // also necessary
   }
