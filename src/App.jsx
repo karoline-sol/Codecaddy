@@ -19,16 +19,16 @@ function App() {
           <Routes>
             {/* Home Page */}
             <Route
-              path="/"
+              path="/Codecaddy"
               element={
                 <div className="home-view">
                   <h1>Welcome to CodeCaddy</h1>
                   <p>Your personal book collection manager</p>
                   <div className="quick-actions">
-                    <a href="/search" className="btn-primary">
+                    <a href="/Codecaddy/search" className="btn-primary">
                       Search Books
                     </a>
-                    <a href="/collection" className="btn-secondary">
+                    <a href="/Codecaddy/collection" className="btn-secondary">
                       View Collection
                     </a>
                   </div>
@@ -38,19 +38,19 @@ function App() {
 
             {/* Search Page */}
             <Route
-              path="/search"
+              path="/Codecaddy/search"
               element={<BookSearch onSelect={setSelectedBook} />}
             />
 
             {/* Collection Page */}
             <Route
-              path="/collection"
+              path="/Codecaddy/collection"
               element={<BookCollection onSelect={setSelectedBook} />}
             />
 
             {/* Book Details Page */}
             <Route
-              path="/book/:id"
+              path="/Codecaddy/book/:id"
               element={<BookDetails book={selectedBook} />}
             />
           </Routes>
