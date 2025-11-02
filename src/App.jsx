@@ -11,7 +11,7 @@ function App() {
   const [selectedBook, setSelectedBook] = useState(null)
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/Codecaddy'>
       <div className="app">
         <Navigation />
 
@@ -19,16 +19,16 @@ function App() {
           <Routes>
             {/* Home Page */}
             <Route
-              path="/Codecaddy"
+              path="/"
               element={
                 <div className="home-view">
                   <h1>Welcome to CodeCaddy</h1>
                   <p>Your personal book collection manager</p>
                   <div className="quick-actions">
-                    <a href="/Codecaddy/search" className="btn-primary">
+                    <a href="/search" className="btn-primary">
                       Search Books
                     </a>
-                    <a href="/Codecaddy/collection" className="btn-secondary">
+                    <a href="/collection" className="btn-secondary">
                       View Collection
                     </a>
                   </div>
@@ -38,19 +38,19 @@ function App() {
 
             {/* Search Page */}
             <Route
-              path="/Codecaddy/search"
+              path="/search"
               element={<BookSearch onSelect={setSelectedBook} />}
             />
 
             {/* Collection Page */}
             <Route
-              path="/Codecaddy/collection"
+              path="/collection"
               element={<BookCollection onSelect={setSelectedBook} />}
             />
 
             {/* Book Details Page */}
             <Route
-              path="/Codecaddy/book/:id"
+              path="/book/:id"
               element={<BookDetails book={selectedBook} />}
             />
           </Routes>
