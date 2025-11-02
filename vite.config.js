@@ -10,7 +10,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: "https://karoline-sol.github.io/Codecaddy/docs",
+  base: "",
   build: {
     outDir: 'docs',
     emptyOutDir: true, // also necessary
