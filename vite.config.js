@@ -11,7 +11,7 @@ export default defineConfig({
     },
   },
   base: "/Codecaddy",
-  build: {git 
+  build: {
     outDir: 'docs',
     emptyOutDir: true, // also necessary
   }
