@@ -11,7 +11,7 @@ function App() {
   const [selectedBook, setSelectedBook] = useState(null)
 
   return (
-    <BrowserRouter basename='/Codecaddy/'>
+    <BrowserRouter basename='/Codecaddy'>
       <div className="app">
         <Navigation />
 
