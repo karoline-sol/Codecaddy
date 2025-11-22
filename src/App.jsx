@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { useState } from 'react'
 import Navigation from './components/Navigation'
 import BookSearch from './components/BookSearch'
@@ -25,12 +25,12 @@ function App() {
                   <h1>Welcome to CodeCaddy</h1>
                   <p>Your personal book collection manager</p>
                   <div className="quick-actions">
-                    <a href="/search" className="btn-primary">
+                    <Link to="/search" className="btn-primary">
                       Search Books
-                    </a>
-                    <a href="/collection" className="btn-secondary">
+                    </Link>
+                    <Link to="/collection" className="btn-secondary">
                       View Collection
-                    </a>
+                    </Link>
                   </div>
                 </div>
               }
